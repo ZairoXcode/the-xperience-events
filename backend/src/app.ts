@@ -7,14 +7,27 @@ import { config } from './config/env';
 export const createApp = (): Express => {
   const app = express();
 
+  const allowedOrigins = [
+    config.frontendUrl.replace(/\/+$/, ''),
+    'https://frontend-ochre-one-30.vercel.app',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+  ];
+
   // Middleware
   app.use(
     cors({
-      origin: [
-        config.frontendUrl,
-        'http://localhost:3000',
-        'http://127.0.0.1:3000',
-      ],
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        const cleanOrigin = origin.replace(/\/+$/, '');
+        if (
+          allowedOrigins.includes(cleanOrigin) ||
+          cleanOrigin.endsWith('.vercel.app')
+        ) {
+          return callback(null, true);
+        }
+        return callback(null, true);
+      },
       credentials: true,
       methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE', 'OPTIONS'],
       allowedHeaders: ['Content-Type', 'Authorization'],
