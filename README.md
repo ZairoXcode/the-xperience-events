@@ -260,6 +260,13 @@ FRONTEND_URL=http://localhost:3000
 
 `AI_API_KEY` is optional. Without it, the built-in fallback handles guest count updates, accommodation requirements, catering deadlines, photographer risks, and transport capacity gaps.
 
+Edit `frontend/.env.local` (or set in Vercel environment variables):
+
+```env
+# Point to local or production Render backend:
+NEXT_PUBLIC_API_URL=https://the-xperience-events.onrender.com/api
+```
+
 ### Run
 
 ```bash
