@@ -2,6 +2,8 @@
 
 An event management assistant that turns natural-language conversations into structured event data — tasks, requirements, vendors, deadlines, and risk alerts — and keeps a dashboard up to date as those conversations happen.
 
+**Live Demo:** [https://frontend-ochre-one-30.vercel.app/](https://frontend-ochre-one-30.vercel.app/)
+
 ---
 
 ## What I Built
@@ -339,6 +341,8 @@ No automated test suite. These scenarios were manually tested against a running 
 
 ---
 
-## Demo
+## Live Demo
 
-No live deployment. Run locally following the instructions above.
+- **Frontend Application:** [https://frontend-ochre-one-30.vercel.app/](https://frontend-ochre-one-30.vercel.app/)
+- **Backend API:** [https://the-xperience-events.onrender.com/api/health](https://the-xperience-events.onrender.com/api/health)
+
